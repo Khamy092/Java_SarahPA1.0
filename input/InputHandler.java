@@ -12,11 +12,10 @@ public class InputHandler {
 
     public String takeInput() {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        String userInput = scanner.nextLine();
         scanner.close();
-        return input;
+        return userInput;
     }
-
 
     /**
      * This method processes the user input
@@ -26,37 +25,37 @@ public class InputHandler {
      */
 
     // proccessInput method
-    public String processInput(String input) {
+    public String validateUserInput(String userInput) {
 
         
         // converts input to lowercase
-        input = input.toLowerCase();
+        userInput = userInput.toLowerCase();
 
         // checks if input is empty
-        if (input.isEmpty()) {
+        if (userInput.isEmpty()) {
             return "Cannot process empty input. Please try again.";
         }
 
         // checks if input has special characters
-        if (input.matches(".*[!@#$%^&*()_+=\\[\\]{};':\"\\\\|,.<>\\/?].*")) {
+        if (userInput.matches(".*[!@#$%^&*()_+=\\[\\]{};':\"\\\\|,.<>\\/?].*")) {
             return "Input cannot contain special characters. Please try again.";
         }
 
         // checks if input has numbers
-        if (input.matches(".*\\d.*")) {
+        if (userInput.matches(".*\\d.*")) {
             return "Input cannot contain numbers. Please try again.";
         }
 
         // checks if input has symbols
-        if (input.matches(".*[a-zA-Z].*")) {
+        if (userInput.matches(".*[a-zA-Z].*")) {
             return "Input cannot contain symbols. Please try again.";
         }
 
         // checks if input has spaces
-        if (input.matches(".*\\s.*")) {
+        if (userInput.matches(".*\\s.*")) {
             return "Input cannot contain spaces. Please try again.";
         }
 
-        return input;
+        return userInput;
     }
 }
