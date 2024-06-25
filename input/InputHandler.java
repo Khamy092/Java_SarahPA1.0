@@ -2,7 +2,7 @@ package input;
 
 import java.util.Scanner;
 
-public class TextInputHandler {
+public class InputHandler {
 
     /**
      * This method takes in user input
